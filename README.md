@@ -15,7 +15,96 @@ La LEC Tool está programada a partir de un set de scripts en Python desarrollad
 
   # 📄 Guía de Usuario
 
-Incluir aquí la información
+## Pantalla inicial
+
+La herramienta presenta una barra de navegación con acceso secuencial, a excepción de la última pestaña, que contiene las instrucciones y documentación para el uso de la aplicación.
+
+En la pantalla inicial se dispone de:
+
+* **Iniciar nueva corrida:** Un botón para comenzar un nuevo proceso desde cero. Al hacerlo, el sistema generará automáticamente un nuevo **AnalysisId**.Curva 
+* **Visualizar corrida previa:** Un campo de entrada (*input*) donde el usuario deberá ingresar el **AnalysisId** correspondiente a una ejecución anterior para consultarla.
+
+## Entrada LEC
+
+En esta sección, el usuario podrá cargar los archivos de entrada necesarios para el procesamiento de la herramienta:
+
+1.  **Archivo de Curva LEC (.csv):** Utilizado para graficar la curva LEC.
+2.  **Archivo de Eventos y Pérdidas (.csv):** Requerido para el cálculo de estadísticas y la generación de la matriz de pérdidas agregadas por año. *Nota: Si no se dispone de un archivo de curva LEC, este archivo será empleado para generarla.*
+
+### Configuración adicional
+
+* **Responsabilidad fiscal del Estado:** Se debe ingresar un porcentaje (valor entre 0 y 100). Este dato se utiliza para calcular y visualizar indicadores como la retención fiscal.
+* **Desglose (Opcional):** El usuario puede completar un desglose ilustrativo que detalle la distribución de dicha responsabilidad fiscal entre distintos sectores del Estado.
+
+### Supuestos de la corrida
+
+Se incluyen los datos identificatorios del proceso:
+* **Responsable:** Persona a cargo de la ejecución.
+* **Fecha:** Fecha de registro o ejecución.
+* **País:** País asociado a la corrida.
+* **AnalysisId:** Campo autocompletado generado por la herramienta.
+
+> Una vez cargados los archivos y completados los campos, haga clic en **“Procesar datos y visualizar curva LEC”** para avanzar.
+
+## Curva LEC
+
+Esta pantalla tiene un propósito principalmente visual e informativo. En ella se presentan:
+
+* El gráfico de pérdidas agregadas por año.
+* Las estadísticas derivadas de dichas pérdidas.
+* El gráfico de la curva LEC.
+
+### Opciones de visualización
+El gráfico de la Curva LEC dispone de cuatro tipos de escala:
+* Escala natural
+* Escala logarítmica en eje X
+* Escala logarítmica en eje Y
+* Escala logarítmica en ambos ejes
+
+*El usuario puede descargar el archivo de la curva LEC mediante el enlace disponible debajo del botón de navegación.*
+
+> Para continuar, seleccione **“Derivar catálogos de pérdidas sintéticos”**.
+
+## Catálogo Sintético
+
+En esta etapa, el usuario debe especificar los parámetros para la simulación:
+
+* **Número de simulaciones:** Cantidad total de catálogos a generar (valor entre 1 y 1000).
+* **Horizonte de simulación (años):** Duración temporal de cada simulación (valor entre 5 y 15 años).
+
+Al hacer clic en **“Generar catálogos”**, la herramienta procesará la información permitiendo:
+1.  Visualizar cualquier catálogo individual junto con sus estadísticas.
+2.  Consultar un gráfico resumen de todos los catálogos con sus indicadores.
+
+*El archivo generado podrá descargarse mediante el enlace de descarga disponible debajo del botón de avance.*
+
+> Para continuar, haga clic en **“Definir estrategias de gestión del riesgo”**.
+
+## Gestión del riesgo
+
+En esta pantalla se pueden crear y visualizar estrategias compuestas por distintos mecanismos.
+
+### Mecanismos disponibles
+
+**De Cobertura (con parámetros configurables):**
+* Seguros
+* CCF
+* PPO
+* DDO
+
+**De Reducción:**
+* Lineal (configurable mediante parámetros específicos).
+
+### Visualización de resultados
+El usuario puede:
+* Seleccionar el catálogo a visualizar.
+* Consultar las estadísticas de gestión del riesgo.
+* Representar gráficamente cualquiera de ellas.
+* Ver un gráfico comparativo entre las distintas estrategias generadas.
+
+*El resultado puede descargarse mediante el enlace disponible al pie de la pantalla.*
+
+> Para finalizar o avanzar a la siguiente etapa, seleccione **“Elaborar informe de resultados”**.
 
 # 🧑‍🍳 Autores
 
