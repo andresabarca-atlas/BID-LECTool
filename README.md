@@ -26,7 +26,7 @@ Andrés Abarca, Kenneth Otárola, Ginés Suárez
 
 # 📑 Licencia
 
-Copyright© 2025. Banco Interamericano de Desarrollo ("BID"). Uso autorizado AM-331-A3
+Copyright© 2025. Banco Interamericano de Desarrollo ("BID"). Uso autorizado [AM-331-A3](https://github.com/andresabarca-atlas/BID-LECTool/edit/main/LICENSE.md)
 
 ## Limitación de responsabilidades
 
