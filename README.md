@@ -13,18 +13,17 @@ La LEC Tool está programada a partir de un set de scripts en Python desarrollad
 -	Catálogo Sintético (Simulación de perdidas futuras)
 -	Gestión del Riesgo (Evaluación de mecanismos de transferencia y reducción de riesgo)
 
-  # 📄 Guía de Usuario
-
-## Pantalla inicial
-
+# 📄 Guía de Usuario
 La herramienta presenta una barra de navegación con acceso secuencial, a excepción de la última pestaña, que contiene las instrucciones y documentación para el uso de la aplicación.
+
+## 📄1️⃣Pantalla inicial
 
 En la pantalla inicial se dispone de:
 
-* **Iniciar nueva corrida:** Un botón para comenzar un nuevo proceso desde cero. Al hacerlo, el sistema generará automáticamente un nuevo **AnalysisId**.Curva 
+* **Iniciar nueva corrida:** Un botón para comenzar un nuevo proceso desde cero. Al hacerlo, el sistema generará automáticamente un nuevo **AnalysisId**. Este identificador único es generado automáticamente por el sistema y define la semilla aleatoria de los análisis para poder recuperar sus análisis en el futuro. 
 * **Visualizar corrida previa:** Un campo de entrada (*input*) donde el usuario deberá ingresar el **AnalysisId** correspondiente a una ejecución anterior para consultarla.
 
-## Entrada LEC
+## 📄2️⃣Entrada LEC
 
 En esta sección, el usuario podrá cargar los archivos de entrada necesarios para el procesamiento de la herramienta:
 
@@ -46,7 +45,7 @@ Se incluyen los datos identificatorios del proceso:
 
 > Una vez cargados los archivos y completados los campos, haga clic en **“Procesar datos y visualizar curva LEC”** para avanzar.
 
-## Curva LEC
+## 📄3️⃣Curva LEC
 
 Esta pantalla tiene un propósito principalmente visual e informativo. En ella se presentan:
 
@@ -65,7 +64,7 @@ El gráfico de la Curva LEC dispone de cuatro tipos de escala:
 
 > Para continuar, seleccione **“Derivar catálogos de pérdidas sintéticos”**.
 
-## Catálogo Sintético
+## 📄4️⃣ Catálogo Sintético
 
 En esta etapa, el usuario debe especificar los parámetros para la simulación:
 
@@ -80,7 +79,7 @@ Al hacer clic en **“Generar catálogos”**, la herramienta procesará la info
 
 > Para continuar, haga clic en **“Definir estrategias de gestión del riesgo”**.
 
-## Gestión del riesgo
+## 📄5️⃣ Gestión del riesgo
 
 En esta pantalla se pueden crear y visualizar estrategias compuestas por distintos mecanismos.
 
@@ -93,7 +92,7 @@ En esta pantalla se pueden crear y visualizar estrategias compuestas por distint
 * DDO
 
 **De Reducción:**
-* Lineal (configurable mediante parámetros específicos).
+* Perfil de inversión en reducción (configurable mediante parámetros específicos).
 
 ### Visualización de resultados
 El usuario puede:
