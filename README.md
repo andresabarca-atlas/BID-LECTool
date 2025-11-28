@@ -16,7 +16,7 @@ La LEC Tool está programada a partir de un set de scripts en Python desarrollad
 # 📄 Guía de Usuario
 La herramienta presenta una barra de navegación con acceso secuencial, a excepción de la última pestaña, que contiene las instrucciones y documentación para el uso de la aplicación.
 
-## 📄1️⃣Pantalla inicial
+## 📄1️⃣Pantalla de Inicio
 En la pantalla inicial se dispone de:
 
 <table>
