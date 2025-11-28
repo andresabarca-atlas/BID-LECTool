@@ -17,15 +17,32 @@ La LEC Tool está programada a partir de un set de scripts en Python desarrollad
 La herramienta presenta una barra de navegación con acceso secuencial, a excepción de la última pestaña, que contiene las instrucciones y documentación para el uso de la aplicación.
 
 ## 📄1️⃣Pantalla inicial
-
 En la pantalla inicial se dispone de:
+
+<table>
+  <tr>
+    <td width="30%">
+      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/inicio.png" alt="Inicio">
+    </td>
+    <td>
+      <p>
 
 * **Iniciar nueva corrida:** Un botón para comenzar un nuevo proceso desde cero. Al hacerlo, el sistema generará automáticamente un nuevo **AnalysisId**. Este identificador único es generado automáticamente por el sistema y define la semilla aleatoria de los análisis para poder recuperar sus análisis en el futuro. 
 * **Visualizar corrida previa:** Un campo de entrada (*input*) donde el usuario deberá ingresar el **AnalysisId** correspondiente a una ejecución anterior para consultarla.
+</p>
+    </td>
+  </tr>
+</table>
 
 ## 📄2️⃣Entrada LEC
-
 En esta sección, el usuario podrá cargar los archivos de entrada necesarios para el procesamiento de la herramienta:
+<table>
+<tr>
+    <td width="30%">
+      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/input.png" alt="Inputs">
+    </td>
+    <td>
+      <p>
 
 1.  **Archivo de Curva LEC (.csv):** Utilizado para graficar la curva LEC.
 2.  **Archivo de Eventos y Pérdidas (.csv):** Requerido para el cálculo de estadísticas y la generación de la matriz de pérdidas agregadas por año. *Nota: Si no se dispone de un archivo de curva LEC, este archivo será empleado para generarla.*
@@ -42,6 +59,10 @@ Se incluyen los datos identificatorios del proceso:
 * **Fecha:** Fecha de registro o ejecución.
 * **País:** País asociado a la corrida.
 * **AnalysisId:** Campo autocompletado generado por la herramienta.
+</p>
+    </td>
+  </tr>
+</table>
 
 > Una vez cargados los archivos y completados los campos, haga clic en **“Procesar datos y visualizar curva LEC”** para avanzar.
 
@@ -49,6 +70,14 @@ Se incluyen los datos identificatorios del proceso:
 
 Esta pantalla tiene un propósito principalmente visual e informativo. En ella se presentan:
 
+<table>
+<tr>
+    <td width="30%">
+      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/lec-results.png" alt="LEC_results">
+    </td>
+    <td>
+      <p>
+        
 * El gráfico de pérdidas agregadas por año.
 * Las estadísticas derivadas de dichas pérdidas.
 * El gráfico de la curva LEC.
@@ -60,13 +89,24 @@ El gráfico de la Curva LEC dispone de cuatro tipos de escala:
 * Escala logarítmica en eje Y
 * Escala logarítmica en ambos ejes
 
-*El usuario puede descargar el archivo de la curva LEC mediante el enlace disponible debajo del botón de navegación.*
+*El usuario puede descargar el archivo de la curva LEC mediante el enlace disponible debajo del botón de navegación.* </p>
+    </td>
+  </tr>
+</table>
 
 > Para continuar, seleccione **“Derivar catálogos de pérdidas sintéticos”**.
 
 ## 📄4️⃣ Catálogo Sintético
 
 En esta etapa, el usuario debe especificar los parámetros para la simulación:
+
+<table>
+<tr>
+    <td width="30%">
+      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/synthetic.png" alt="Simulation">
+    </td>
+    <td>
+      <p>
 
 * **Número de simulaciones:** Cantidad total de catálogos a generar (valor entre 1 y 1000).
 * **Horizonte de simulación (años):** Duración temporal de cada simulación (valor entre 5 y 15 años).
@@ -75,13 +115,25 @@ Al hacer clic en **“Generar catálogos”**, la herramienta procesará la info
 1.  Visualizar cualquier catálogo individual junto con sus estadísticas.
 2.  Consultar un gráfico resumen de todos los catálogos con sus indicadores.
 
-*El archivo generado podrá descargarse mediante el enlace de descarga disponible debajo del botón de avance.*
+*El archivo generado podrá descargarse mediante el enlace de descarga disponible debajo del botón de avance.*  
+      </p>
+    </td>
+  </tr>
+</table>
 
 > Para continuar, haga clic en **“Definir estrategias de gestión del riesgo”**.
 
 ## 📄5️⃣ Gestión del riesgo
 
 En esta pantalla se pueden crear y visualizar estrategias compuestas por distintos mecanismos.
+
+<table>
+<tr>
+    <td width="30%">
+      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/drmview.png" alt="DRM Options">
+    </td>
+    <td>
+      <p>
 
 ### Mecanismos disponibles
 
@@ -102,6 +154,10 @@ El usuario puede:
 * Ver un gráfico comparativo entre las distintas estrategias generadas.
 
 *El resultado puede descargarse mediante el enlace disponible al pie de la pantalla.*
+      </p>
+    </td>
+  </tr>
+</table>
 
 > Para finalizar o avanzar a la siguiente etapa, seleccione **“Elaborar informe de resultados”**.
 
