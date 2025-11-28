@@ -45,7 +45,7 @@ En esta sección, el usuario podrá cargar los archivos de entrada necesarios pa
     <td>
       <p>
         
-1.  **Archivo de Eventos y Pérdidas (.csv):** La herramienta procesa estos datos y construye una curva LEC empírica.
+1.  **Archivo de Eventos y Pérdidas (.csv):** La herramienta procesa estos datos y construye una curva LEC empírica. El formato del archivo, así como un set de datos de prueba se puede descargar [en este link](https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Files/LEC_event_loss_example.csv). 
 2.  **Archivo de Curva LEC (.csv):** La curva se incorpora directamente, respetando su estructura de pérdidas y probabilidades.
 3.	**Curva LEC proveniente de los perfiles de riesgo nacionales del BID:** La herramienta adopta la curva sin modificaciones analíticas.
 
@@ -152,7 +152,7 @@ Cada mecanismo puede configurarse mediante sus parámetros específicos, por eje
 **De Cobertura (con parámetros configurables):**
 * Seguros
 * CCF
-* PPO
+* PPO (ver archivo ejemplo [en este link](https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Files/ppo_example.csv))
 * DDO
 
 **De Reducción:**
