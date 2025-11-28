@@ -19,31 +19,11 @@ La herramienta presenta una barra de navegación con acceso secuencial, a excepc
 ## 📄1️⃣Pantalla de Inicio
 En la pantalla inicial se dispone de:
 
-<table>
-  <tr>
-    <td width="30%">
-      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/inicio.png" alt="Inicio">
-    </td>
-    <td>
-      <p>
-
 * **Iniciar nueva corrida:** Un botón para comenzar un nuevo proceso desde cero. Al hacerlo, el sistema generará automáticamente un nuevo **AnalysisId**. Este identificador único es generado automáticamente por el sistema y define la semilla aleatoria de los análisis para poder recuperar sus análisis en el futuro. 
 * **Visualizar corrida previa:** Un campo de entrada (*input*) donde el usuario deberá ingresar el **AnalysisId** correspondiente a una ejecución anterior para consultarla.
-</p>
-    </td>
-  </tr>
-</table>
 
 ## 📄2️⃣Entrada LEC
 En esta sección, el usuario podrá cargar los archivos de entrada necesarios para el procesamiento de la herramienta. El usuario puede elegir entre las siguientes opciones:
-
-<table>
-<tr>
-    <td width="30%">
-      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/input.png" alt="Inputs">
-    </td>
-    <td>
-      <p>
         
 1.  **Archivo de Eventos y Pérdidas (.csv):** La herramienta procesa estos datos y construye una curva LEC empírica. El formato del archivo, así como un set de datos de prueba se puede descargar [en este link](https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Files/LEC_event_loss_example.csv). 
 2.  **Archivo de Curva LEC (.csv):** La curva se incorpora directamente, respetando su estructura de pérdidas y probabilidades.
@@ -61,10 +41,6 @@ Se incluyen los datos identificatorios del proceso:
 * **Fecha:** Fecha de registro o ejecución.
 * **País:** País asociado a la corrida.
 * **AnalysisId:** Campo autocompletado generado por la herramienta.
-</p>
-    </td>
-  </tr>
-</table>
 
 > Una vez cargados los archivos y completados los campos, haga clic en **“Procesar datos y visualizar curva LEC”** para avanzar.
 
@@ -72,14 +48,6 @@ Se incluyen los datos identificatorios del proceso:
 
 Esta pantalla tiene un propósito principalmente visual e informativo.  Se presenta la curva LEC generada a partir de los insumos cargados en la herramienta. Si el usuario proporciona un catálogo histórico de pérdidas, además de la curva se muestran las pérdidas agregadas por año, lo que permite explorar patrones temporales, años extremos y posibles tendencias en los datos de entrada. En ella se presentan:
 
-<table>
-<tr>
-    <td width="30%">
-      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/lec-results.png" alt="LEC_results">
-    </td>
-    <td>
-      <p>
-        
 * El gráfico de pérdidas agregadas por año.
 * Las estadísticas derivadas de dichas pérdidas.
 * El gráfico de la curva LEC.
@@ -93,10 +61,7 @@ El gráfico de la Curva LEC dispone de cuatro tipos de escala:
 * Escala logarítmica en eje Y
 * Escala logarítmica en ambos ejes
 
-*El usuario puede descargar el archivo de la curva LEC mediante el enlace disponible debajo del botón de navegación.* </p>
-    </td>
-  </tr>
-</table>
+*El usuario puede descargar el archivo de la curva LEC mediante el enlace disponible debajo del botón de navegación.* 
 
 > Para continuar, seleccione **“Derivar catálogos de pérdidas sintéticos”**.
 
@@ -104,13 +69,6 @@ El gráfico de la Curva LEC dispone de cuatro tipos de escala:
 
 En esta pestaña se generan catálogos sintéticos de pérdidas mediante simulación estocástica a partir de la curva LEC. Estos representan posibles trayectorias futuras de pérdidas anuales, preservando la distribución de excedencia que describe la curva LEC. El objetivo es ofrecer un insumo probabilístico robusto para la evaluación de estrategias de gestión del riesgo. En esta etapa, el usuario debe especificar los parámetros para la simulación:
 
-<table>
-<tr>
-    <td width="30%">
-      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/synthetic.png" alt="Simulation">
-    </td>
-    <td>
-      <p>
 
 * **Número de simulaciones:** Cantidad total de catálogos a generar (valor entre 1 y 1000).
 * **Horizonte de simulación (años):** Duración temporal de cada simulación (valor entre 5 y 15 años).
@@ -120,10 +78,6 @@ Al hacer clic en **“Generar catálogos”**, la herramienta procesará la info
 2.  Consultar un gráfico resumen de todos los catálogos con sus indicadores.
 
 *El archivo generado podrá descargarse mediante el enlace de descarga disponible debajo del botón de avance.*  
-      </p>
-    </td>
-  </tr>
-</table>
 
 Esta pestaña proporciona, por tanto, una visión completa del comportamiento simulado del riesgo (estimado desde la curva LEC), permitiendo al analista evaluar si los catálogos generados son coherentes y adecuados antes de avanzar hacia la modelación de coberturas financieras y/o las estrategias de reducción del riesgo.
 
@@ -138,14 +92,6 @@ El usuario puede crear múltiples estrategias y comparar sus resultados. Cada es
 * **Mecanismos de reducción del riesgo**: mediante inversiones que disminuyen las pérdidas esperadas durante la vida útil de la inversión.
 
 Cada mecanismo puede configurarse mediante sus parámetros específicos, por ejemplo: punto de retención, límite de agotamiento, porcentaje de cobertura, valores de población expuesta, costos de inversión o relaciones beneficio/costo. Una vez definidos, los mecanismos pueden aplicarse o desactivarse para construir diferentes combinaciones dentro de la misma estrategia.
-
-<table>
-<tr>
-    <td width="30%">
-      <img src="https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Imagenes/drmview.png" alt="DRM Options">
-    </td>
-    <td>
-      <p>
 
 ### Mecanismos disponibles
 
@@ -166,10 +112,6 @@ El usuario puede:
 * Ver un gráfico comparativo entre las distintas estrategias generadas.
 
 *El resultado puede descargarse mediante el enlace disponible al pie de la pantalla.*
-      </p>
-    </td>
-  </tr>
-</table>
 
 > Para finalizar o avanzar a la siguiente etapa, seleccione **“Elaborar informe de resultados”**.
 
