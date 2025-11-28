@@ -35,7 +35,8 @@ En la pantalla inicial se dispone de:
 </table>
 
 ## 📄2️⃣Entrada LEC
-En esta sección, el usuario podrá cargar los archivos de entrada necesarios para el procesamiento de la herramienta:
+En esta sección, el usuario podrá cargar los archivos de entrada necesarios para el procesamiento de la herramienta. El usuario puede elegir entre las siguientes opciones:
+
 <table>
 <tr>
     <td width="30%">
@@ -43,13 +44,14 @@ En esta sección, el usuario podrá cargar los archivos de entrada necesarios pa
     </td>
     <td>
       <p>
-
-1.  **Archivo de Curva LEC (.csv):** Utilizado para graficar la curva LEC.
-2.  **Archivo de Eventos y Pérdidas (.csv):** Requerido para el cálculo de estadísticas y la generación de la matriz de pérdidas agregadas por año. *Nota: Si no se dispone de un archivo de curva LEC, este archivo será empleado para generarla.*
+        
+1.  **Archivo de Eventos y Pérdidas (.csv):** La herramienta procesa estos datos y construye una curva LEC empírica.
+2.  **Archivo de Curva LEC (.csv):** La curva se incorpora directamente, respetando su estructura de pérdidas y probabilidades.
+3.	**Curva LEC proveniente de los perfiles de riesgo nacionales del BID:** La herramienta adopta la curva sin modificaciones analíticas.
 
 ### Configuración adicional
 
-* **Responsabilidad fiscal del Estado:** Se debe ingresar un porcentaje (valor entre 0 y 100). Este dato se utiliza para calcular y visualizar indicadores como la retención fiscal.
+* **Responsabilidad fiscal del Estado:** Se debe ingresar un porcentaje (valor entre 0 y 100). Definida como la fracción de las pérdidas que, histórica o normativamente, son asumidas por el Estado. Esta información se utilizará en etapas posteriores de modelación financieraEste dato se utiliza para calcular y visualizar indicadores como la retención fiscal.
 * **Desglose (Opcional):** El usuario puede completar un desglose ilustrativo que detalle la distribución de dicha responsabilidad fiscal entre distintos sectores del Estado.
 
 ### Supuestos de la corrida
@@ -68,7 +70,7 @@ Se incluyen los datos identificatorios del proceso:
 
 ## 📄3️⃣Curva LEC
 
-Esta pantalla tiene un propósito principalmente visual e informativo. En ella se presentan:
+Esta pantalla tiene un propósito principalmente visual e informativo.  Se presenta la curva LEC generada a partir de los insumos cargados en la herramienta. Si el usuario proporciona un catálogo histórico de pérdidas, además de la curva se muestran las pérdidas agregadas por año, lo que permite explorar patrones temporales, años extremos y posibles tendencias en los datos de entrada. En ella se presentan:
 
 <table>
 <tr>
@@ -81,6 +83,8 @@ Esta pantalla tiene un propósito principalmente visual e informativo. En ella s
 * El gráfico de pérdidas agregadas por año.
 * Las estadísticas derivadas de dichas pérdidas.
 * El gráfico de la curva LEC.
+
+*Si la curva LEC es subida directamente, únicamente se reportará el AAL calculado, y no se visualizarán las pérdidas agregadas por año, ya que no existe un catálogo histórico asociado. Aun así, los indicadores disponibles brindan una visión sintética sobre la severidad, frecuencia y distribución de las pérdidas representadas en la curva (o datos subyacentes que la generaron).*
 
 ### Opciones de visualización
 El gráfico de la Curva LEC dispone de cuatro tipos de escala:
@@ -98,7 +102,7 @@ El gráfico de la Curva LEC dispone de cuatro tipos de escala:
 
 ## 📄4️⃣ Catálogo Sintético
 
-En esta etapa, el usuario debe especificar los parámetros para la simulación:
+En esta pestaña se generan catálogos sintéticos de pérdidas mediante simulación estocástica a partir de la curva LEC. Estos representan posibles trayectorias futuras de pérdidas anuales, preservando la distribución de excedencia que describe la curva LEC. El objetivo es ofrecer un insumo probabilístico robusto para la evaluación de estrategias de gestión del riesgo. En esta etapa, el usuario debe especificar los parámetros para la simulación:
 
 <table>
 <tr>
@@ -121,11 +125,19 @@ Al hacer clic en **“Generar catálogos”**, la herramienta procesará la info
   </tr>
 </table>
 
+Esta pestaña proporciona, por tanto, una visión completa del comportamiento simulado del riesgo (estimado desde la curva LEC), permitiendo al analista evaluar si los catálogos generados son coherentes y adecuados antes de avanzar hacia la modelación de coberturas financieras y/o las estrategias de reducción del riesgo.
+
 > Para continuar, haga clic en **“Definir estrategias de gestión del riesgo”**.
 
 ## 📄5️⃣ Gestión del riesgo
 
-En esta pantalla se pueden crear y visualizar estrategias compuestas por distintos mecanismos.
+En esta pestaña se diseñan, combinan y evalúan estrategias de gestión del riesgo, utilizando los catálogos sintéticos generados previamente. El objetivo es cuantificar cómo diferentes mecanismos (de cobertura financiera o de reducción del riesgo) modifican la distribución de pérdidas y la carga fiscal (i.e., retención y brecha) residual del Estado.
+El usuario puede crear múltiples estrategias y comparar sus resultados. Cada estrategia puede incluir uno o varios mecanismos:
+
+* **Mecanismos de cobertura financiera**: tales como seguros, créditos contingentes, bonos catastróficos, fondos de emergencia.
+* **Mecanismos de reducción del riesgo**: mediante inversiones que disminuyen las pérdidas esperadas durante la vida útil de la inversión.
+
+Cada mecanismo puede configurarse mediante sus parámetros específicos, por ejemplo: punto de retención, límite de agotamiento, porcentaje de cobertura, valores de población expuesta, costos de inversión o relaciones beneficio/costo. Una vez definidos, los mecanismos pueden aplicarse o desactivarse para construir diferentes combinaciones dentro de la misma estrategia.
 
 <table>
 <tr>
