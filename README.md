@@ -1,7 +1,7 @@
 # LEC Tool: Cálculo de curvas de excedencia de pérdidas y evaluación de estrategias de gestión de riesgo
-La herramienta **LEC Tool** consiste en una plataforma desarrollada por el **Banco Interamericano de Desarrollo** con el propósito de derivar curvas de excedencia de pérdidas (LEC) a partir de registros históricos de desastres. Esta plataforma está diseñada para estimar la tasa de excedencia anual asociada a valores específicos de pérdidas económicas. La curva LEC resultante se utiliza posteriormente en análisis de riesgo y en la toma de decisiones para la gestión de desastres, particularmente para la selección de estrategias de transferencia y/o reducción de riesgo.
+La herramienta **LEC Tool** consiste en una plataforma desarrollada por el **Banco Interamericano de Desarrollo** con el propósito de derivar curvas híbridas de excedencia de pérdidas (LEC) a partir de registros históricos y estudios probabilísticos de desastres. Esta plataforma está diseñada para estimar la tasa de excedencia anual asociada a valores específicos de pérdidas económicas. La curva LEC resultante se utiliza posteriormente en análisis de riesgo y en la toma de decisiones para la gestión de desastres, particularmente para la selección de estrategias de transferencia y/o reducción de riesgo.
 
-![version](https://img.shields.io/badge/version-0.1.0-blue)
+![version](https://img.shields.io/badge/version-2.0.0-blue)
 
 # ✨ Descripción
 
@@ -25,15 +25,15 @@ En la pantalla inicial se dispone de:
 ## 📄2️⃣Entrada LEC
 En esta sección, el usuario podrá cargar los archivos de entrada necesarios para el procesamiento de la herramienta. El usuario puede elegir entre las siguientes opciones:
         
-1.  **Archivo de Eventos y Pérdidas (.csv):** La herramienta procesa estos datos y construye una curva LEC empírica. El formato del archivo, así como un set de datos de prueba se puede descargar [en este link](https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Files/LEC_event_loss_example.csv). 
+1.  **Subir datos de pérdidas (.csv):** El usuario carga un set de datos de pérdidas, las cuales pueden ser un set de eventos (año y pérdida económica) y/o resultados probabilísticos (pérdida económica y tasa de excedencia anual).  La herramienta procesa estos datos y construye una curva LEC empírica (si sólo se incluyen eventos históricos) o híbrida. El formato de los archivo, así como un set de datos de prueba se puede descargar [en este link](https://github.com/andresabarca-atlas/BID-LECTool/blob/main/Files/). 
 2.  **Archivo de Curva LEC (.csv):** La curva se incorpora directamente, respetando su estructura de pérdidas y probabilidades.
-3.	**Curva LEC proveniente de los perfiles de riesgo nacionales del BID:** La herramienta adopta la curva sin modificaciones analíticas.
+3.  **Curva LEC proveniente de los perfiles de riesgo nacionales del BID:** El usuario puede elegir un set de datos curado por el equipo DRM del BID, el cual está disponible para la mayoría de los países de la región Latinoamérica y el Caribe.
 
 ### Configuración adicional
 
-* **Responsabilidad fiscal del Estado:** Se debe ingresar un porcentaje (valor entre 0 y 100). Definida como la fracción de las pérdidas que, histórica o normativamente, son asumidas por el Estado. Esta información se utilizará en etapas posteriores de modelación financieraEste dato se utiliza para calcular y visualizar indicadores como la retención fiscal.
-* **Desglose (Opcional):** El usuario puede completar un desglose ilustrativo que detalle la distribución de dicha responsabilidad fiscal entre distintos sectores del Estado.
-
+* **Responsabilidad fiscal del Estado:** Se debe ingresar un porcentaje (valor entre 0 y 100). Definida como la fracción de las pérdidas que, histórica o normativamente, son asumidas por el Estado. Esta información se utilizará en etapas posteriores de modelación financiera, para calcular y visualizar indicadores como la brecha fiscal.
+	* **Desglose (Opcional):** El usuario puede completar un desglose ilustrativo que detalle la distribución de dicha responsabilidad fiscal entre distintos sectores del Estado.
+* **Factores de escala del escenario:** Factores que escalan la curva LEC. El factor de pérdidas multiplica las pérdidas económicas y el de frecuencia multiplica las tasas de excedencia. Se aplican tanto a la curva empírica como a la cola probabilista.
 ### Supuestos de la corrida
 
 Se incluyen los datos identificatorios del proceso:
@@ -68,7 +68,6 @@ El gráfico de la Curva LEC dispone de cuatro tipos de escala:
 ## 📄4️⃣ Catálogo Sintético
 
 En esta pestaña se generan catálogos sintéticos de pérdidas mediante simulación estocástica a partir de la curva LEC. Estos representan posibles trayectorias futuras de pérdidas anuales, preservando la distribución de excedencia que describe la curva LEC. El objetivo es ofrecer un insumo probabilístico robusto para la evaluación de estrategias de gestión del riesgo. En esta etapa, el usuario debe especificar los parámetros para la simulación:
-
 
 * **Número de simulaciones:** Cantidad total de catálogos a generar (valor entre 1 y 1000).
 * **Horizonte de simulación (años):** Duración temporal de cada simulación (valor entre 5 y 15 años).
